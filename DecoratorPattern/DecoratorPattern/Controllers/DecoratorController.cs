@@ -1,5 +1,6 @@
 ﻿using DecoratorPattern.Pattern;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading;
 
 namespace DecoratorPattern.Controllers
 {
@@ -7,6 +8,14 @@ namespace DecoratorPattern.Controllers
     [ApiController]
     public class DecoratorController : ControllerBase
     {
+
+        Thread t;
+
+        private void Sleep()
+        {
+            Thread.Sleep(1000);
+        }
+
         // GET api/values/5
         [HttpGet("{data}")]
         public ActionResult<string> Get(string data)
